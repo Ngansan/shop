@@ -152,3 +152,60 @@
         }
     }
 }
+
+.hero__categories{
+    position: relative;
+    .hero__categories__all{
+        background: map.get($theme-colors, "main");
+        padding: 15px 15px 15px 35px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        font-weight: 700;
+        color: white;
+    
+        svg,
+        span{
+            font-size: 16px;
+            margin-right: 5px;
+        }
+
+        svg{
+            font-size: 20px;
+            font-weight: bold;
+        }
+    }
+    ul{
+        border: 1px solid #ebebeb;
+        position: absolute;
+        opacity: 1;
+        width: 99%;
+        background: white;
+        transition: all 0.2s;
+        li{
+            list-style: none;
+
+            a{
+                text-decoration: none;
+                background-color: transparent;
+                font-size: 16px;
+                color: map.get($theme-colors, "normal-text");
+                line-height: 39px;
+                display: block;
+                padding-left: 40px;
+            }
+            &:hover{
+                background: #f7ffff;
+                a{
+                    color: map.get($theme-colors, "main");
+
+                }
+            }
+
+        }
+        &.hidden{
+            opacity: 0;
+        }
+
+    }
+}
