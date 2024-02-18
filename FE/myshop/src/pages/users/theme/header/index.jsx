@@ -10,12 +10,15 @@ import { IoMail } from "react-icons/io5";
 import { formatter } from "utils/fomater";
 import { CiShoppingCart } from "react-icons/ci";
 import { ROUTERS } from "utils/router";
+import { FaList } from "react-icons/fa";
+
 
 
 
 const Header = () => {
+    const [isShowCategories, setShowCategories] = useState(true);
 
-    const [menus, setMenus] = useState([
+    const [menus] = useState([
         {
             name: "Trang chủ",
             path: ROUTERS.USER.HOME,
@@ -153,6 +156,26 @@ const Header = () => {
                             </ul>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div className="container">
+                <div className="row hero__categories__container">
+                    <div className="col-lg-3 hero__categories">
+                        <div>
+                            <div className="hero__categories__all" onClick={() => setShowCategories(!isShowCategories)}>
+                            <FaList/>Danh sách sản phẩm
+                            </div>
+                
+                                <ul className={isShowCategories ? "" : "hidden"}>
+                                    <li><Link to={"#"}>Thịt tươi</Link></li>
+                                    <li><Link to={"#"}>Hải sản</Link></li>
+                                    <li><Link to={"#"}>Rau củ</Link></li>
+                                    <li><Link to={"#"}>Trái cây</Link></li>
+                                </ul>
+
+                        </div>
+                    </div>
+                    <div className="col-lg-9">phai</div>
                 </div>
             </div>
 
